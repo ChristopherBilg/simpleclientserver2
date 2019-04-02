@@ -37,6 +37,6 @@ if not data:
     exit
 
 print("Data received: " + str(data.decode()))
-connection.send(shift_text(data, 3).encode())
+connection.send(shift_text(data, 23).encode())
 
 connection.close()

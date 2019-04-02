@@ -27,7 +27,9 @@ def shift_text(text, shift_amount):
 sent_message = raw_input("Message to send: ")
 socket_ = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 socket_.connect((HOST, PORT))
-socket_.send(shift_text(str(sent_message), 23))
+socket_.send(shift_text(str(sent_message), 3))
+
+print("Message sent was: " + shift_text(str(sent_message), 3))
 
 received_message = socket_.recv(BUFFER_SIZE)
 if not received_message:
