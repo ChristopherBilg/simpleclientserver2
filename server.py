@@ -24,7 +24,6 @@ def shift_text(text, shift_amount):
             data.append(letter)
     return "".join(data)
 
-
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen(1)
@@ -36,6 +35,7 @@ print("Address: " + str(address))
 data = connection.recv(BUFFER_SIZE)
 if not data:
     exit
+
 print("Data received: " + str(data.decode()))
 connection.send(shift_text(data, 3).encode())
 
